@@ -11,11 +11,7 @@ import {
   Building2,
 } from "lucide-react";
 
-// ─── Helpers ─────────────────────────────────────────────────────────────────
 
-// Builds the cfmtg.com profile photo URL from a person's name.
-// Pattern: https://cfmtg.com/wp-content/uploads/photo/FirstName-LastName-150x150.jpg
-// You can override per-person with the `photo` field if the auto URL doesn't work.
 function buildPhotoUrl(name: string): string {
   const slug = name
     .normalize("NFD")
@@ -61,7 +57,7 @@ function Avatar({ name, photo }: { name: string; photo?: string }) {
         src={src}
         alt={name}
         onError={() => setErr(true)}
-        className="w-[120px] h-[120px] sm:w-[150px] sm:h-[150px] object-cover object-top flex-shrink-0 border border-gray-200"
+        className="w-[120px] h-[130px] sm:w-[150px] sm:h-[150px] object-cover object-top flex-shrink-0 border border-gray-200"
         style={{ borderRadius: 4 }}
       />
     );
@@ -76,9 +72,7 @@ function Avatar({ name, photo }: { name: string; photo?: string }) {
   );
 }
 
-// ─── Data ─────────────────────────────────────────────────────────────────────
-// `photo` is optional — leave out or set "" to use auto-generated URL.
-// Override with the exact URL if the auto one is wrong for someone.
+
 const branchesData = [
   {
     name: "Antonio Borges",
